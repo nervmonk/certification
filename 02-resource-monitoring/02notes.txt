@@ -1,0 +1,107 @@
+✅ 1. Monitoring Tools
+You’ll usually rely on monitoring and observability tools to track system metrics:
+
+Popular Tools:
+Prometheus + Grafana: Metric collection + customizable dashboards and alerts.
+
+Datadog: Full-stack observability with anomaly detection.
+
+New Relic: APM (Application Performance Monitoring) with user behavior analytics.
+
+AWS CloudWatch / Azure Monitor / Google Cloud Operations Suite: Cloud-native options if you're on a major cloud provider.
+
+ELK Stack (Elasticsearch, Logstash, Kibana): For log-based monitoring.
+
+✅ 2. Metrics to Monitor
+Here are critical resource areas and what you typically watch:
+
+Server & Infrastructure:
+CPU Usage (e.g., >85% for 5 minutes)
+
+Memory Usage (e.g., sustained above 90%)
+
+Disk I/O and Space
+
+Network traffic and errors
+
+Instance health checks (e.g., EC2 status or container liveness probes)
+
+Application Level:
+Response time / latency (e.g., 95th percentile > 500ms)
+
+Error rates (5xx errors, 4xx spikes)
+
+Queue lengths / throughput
+
+Thread or connection pool exhaustion
+
+Database:
+Query performance
+
+Connection pool usage
+
+Replication lag
+
+✅ 3. Setting Thresholds and Alerts
+Thresholds should be based on baselines and SLOs (Service Level Objectives). Examples:
+
+CPU usage > 85% for 5 minutes → alert
+
+95th percentile response time > 2s → alert
+
+Disk space < 10% remaining → alert
+
+Error rate > 1% of all requests in last 5 minutes → alert
+
+Alerts can be configured in tools like Prometheus Alertmanager, Datadog monitors, or CloudWatch Alarms.
+
+✅ 4. Alerting Channels
+Set up notifications for alerting through:
+
+Slack, Microsoft Teams
+
+PagerDuty / Opsgenie
+
+SMS / Email
+
+✅ 5. Auto-Remediation (Optional but Powerful)
+For some thresholds, consider auto-responses:
+
+Auto-scale instances or containers
+
+Restart services or pods
+
+Clear cache or rotate logs
+
+✅ 6. Visualization and Dashboards
+Use Grafana, Datadog, or built-in dashboards to get real-time visibility:
+
+Traffic heatmaps
+
+Latency over time
+
+Error rate histograms
+
+Resource usage trends
+
+✅ 7. Logging and Tracing
+Use:
+
+Distributed tracing (Jaeger, Zipkin, Datadog APM)
+
+Structured logging (JSON logs, centralized log ingestion)
+
+Correlate logs and traces with metrics to pinpoint failure points quickly.
+
+Summary Workflow
+Collect metrics/logs/traces
+
+Analyze against thresholds (with anomaly detection or manual rules)
+
+Alert relevant teams or services
+
+Respond manually or automatically
+
+Visualize trends to prevent future issues
+
+Would you like a practical setup example using something like Prometheus + Grafana on Kubernetes or AWS CloudWatch for EC2?
