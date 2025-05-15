@@ -1,0 +1,14 @@
+{
+  "name": "ryan_certification",
+  "version": "0.0.1",
+  "description": "sandbox for certification",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
