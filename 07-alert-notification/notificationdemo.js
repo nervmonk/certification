@@ -1,8 +1,8 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = '7747514951:AAFFTHUqXQYjcJnJ04fmTZitjMCU8Gb9K4A';
+const token = '';
 const bot = new TelegramBot(token, {polling: false});
-const chatId = '384307369';
+const chatId = '';
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

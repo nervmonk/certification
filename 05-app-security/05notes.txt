@@ -1,3 +1,11 @@
+App Security
+
+- Gunakan https untuk enkripsi data in transit
+- Enkripsi data sensitive dengan menggunakan algoritme yang kuat
+- Implementasikan Authentication dan Authorization
+- Amankan aplikasi dari SQL injection dan XSS
+- Gunakan library dan framework yang memiliki proteksi terhadap common vulnerability
+
 Ensuring user data and app safety when building web applications involves a combination of best practices, security measures, and ongoing vigilance. Here are some key strategies:
 
 Data Encryption:
