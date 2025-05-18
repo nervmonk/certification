@@ -31,3 +31,8 @@ b. Siapkan strategi rollback
 ### Tentukan step untuk rollback, re-routing and re-configuring
 ### Simulasi rollback dan validasi backup
 ### Post-Rollback Review
+
+
+
+restart nginx: docker-compose exec nginx nginx -s reload
+restart container: docker-compose up --build

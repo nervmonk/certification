@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  firstserver:
+    build:
+      context: ./firstserver
+    ports:
+      - "8080:8080"
+
+  secondserver:
+    build:
+      context: ./secondserver
+    ports:
+      - "8081:8080"
+
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - firstserver
+      - secondserver
