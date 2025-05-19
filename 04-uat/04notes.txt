@@ -1,29 +1,19 @@
-User Acceptance Testing (UAT) is a critical phase in the software development lifecycle where the end users test the software to ensure it meets their requirements and is ready for deployment. Here’s a step-by-step guide to UAT, along with its goals:
+1. Definisikan scope UAT, fitur2 apa saja yang akan dites
+2. Menentukan tim UAT, end user, developer, stakeholder, QA
+3. Membuat perencanaan UAT yang memuat strategi tes, resource, timeline, dan ekspektasi
+4. Menentukan kasus tes berdasarkan requirement user dan proses bisnis
+5. Memastikan semua test case mengcover semua skenario, positif, negatif, dan case extraordinary yang mungkin terjadi
+6. Validasi semua skenario tes dengan stakeholder
+7. Mempersiapkan environment UAT yang menyerupai dengan env production
+8. User melakukan tes dan mencatat hasilnya
+9. Mengklasifikasi defect berdasarkan urgensinya
+10. Setelah fixing, lakukan re-test untuk memastikan bahwa defect telah ter-resolve
+11. Verifikasi bahwa fixing tidak menghasilkan issue baru
+12. Meminta feedback user terhadap kinerja aplikasi
+13. Diskusi change requests atau tambahan fitur
+14. Setelah proses testing selesai, dapatkan persetujuan formal dari client/stakeholder
+15. Dokumentasikan hasil UAT dan apa yang menjadi lesson learned dalam proses UAT kali ini
 
-Step-by-Step UAT Process
-Planning:
-Define the scope of UAT, including what features and functionalities will be tested.
-Identify the user acceptance testing team, which typically includes end users, stakeholders, and UAT coordinators.
-Develop a UAT plan that outlines the testing strategy, resources, timelines, and deliverables.
-Designing Test Cases:
-Create detailed test cases based on user requirements and business processes.
-Ensure that test cases cover all scenarios, including positive, negative, and edge cases.
-Review and validate test cases with stakeholders to ensure completeness.
-Setting Up the UAT Environment:
-Prepare a testing environment that closely resembles the production environment.
-Ensure that all necessary data, tools, and access permissions are in place for testers.
-Executing Test Cases:
-Conduct the testing as per the defined test cases.
-Users execute the tests and document the results, noting any discrepancies or issues encountered.
-Logging Defects:
-Record any defects or issues found during testing in a defect tracking system.
-Classify defects based on severity and impact on the user experience.
-Retesting and Verification:
-Once defects are fixed, retest the affected areas to ensure that issues have been resolved.
-Verify that the fixes do not introduce new issues.
-User Feedback:
-Gather feedback from users regarding their experience with the software.
-Discuss any additional requirements or changes that may be needed.
 Final Approval:
 Once testing is complete and all critical issues are resolved, obtain formal approval from stakeholders to proceed with deployment.
 Document the UAT results and any lessons learned for future projects.

@@ -1,4 +1,4 @@
 1. Tentukan ekspektasi user load, volume data, dan rate transactions
-2. Pertimbangkan untuk menggunakan service cloude untuk mendapatkan autoscaling features
+2. Pertimbangkan untuk menggunakan service cloud untuk mendapatkan autoscaling features
 3. Tes performa dengan menggunakan JMeter
 4. Analisa scalabilitas database, pertimbangkan sharding, replikasi, indexing
