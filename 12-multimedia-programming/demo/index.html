@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MinIO Upload and View</title>
+    <title>Image and Video Uploader</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Upload and View Photos and Videos</h1>
-        <input type="file" id="fileInput" multiple>
-        <button id="uploadButton">Upload</button>
-        <div id="mediaContainer"></div>
+        <h1>Upload Image/Video</h1>
+        <form id="uploadForm">
+            <input type="file" id="fileInput" accept="image/*,video/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <h2>Uploaded Files</h2>
+        <ul id="fileList"></ul>
     </div>
+
+    <div id="mediaModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" class="modal-media" alt="Uploaded" style="display: none;">
+            <video id="modalVideo" class="modal-media" controls style="display: none;"></video>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

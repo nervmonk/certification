@@ -1,53 +1,62 @@
-const uploadButton = document.getElementById('uploadButton');
+const uploadForm = document.getElementById('uploadForm');
 const fileInput = document.getElementById('fileInput');
-const mediaContainer = document.getElementById('mediaContainer');
+const fileList = document.getElementById('fileList');
+const mediaModal = document.getElementById('mediaModal');
+const modalImage = document.getElementById('modalImage');
+const modalVideo = document.getElementById('modalVideo');
+const closeModal = document.getElementById('closeModal');
 
-const minioEndpoint = ''; // e.g., 'http://localhost:9000'
-const bucketName = ''; // e.g., 'mybucket'
-const accessKey = '';
-const secretKey = '';
+// Function to fetch the list of uploaded files
+const fetchFileList = async () => {
+    const response = await fetch('http://localhost:3000/files'); // Adjust the endpoint as needed
+    const files = await response.json();
+    fileList.innerHTML = '';
+    files.forEach(file => {
+        const li = document.createElement('li');
+        li.textContent = file;
+        li.onclick = () => openMedia(file);
+        fileList.appendChild(li);
+    });
+};
 
-const minioClient = new Minio.Client({
-    endPoint: minioEndpoint,
-    port: 9000,
-    useSSL: false,
-    accessKey: accessKey,
-    secretKey: secretKey
+// Function to handle file upload
+uploadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('image', fileInput.files[0]);
+    console.log(formData);
+    
+
+    await fetch('http://localhost:3000/upload', {
+        method: 'POST',
+        body: formData
+    });
+
+    fileInput.value = ''; // Clear the file input
+    fetchFileList(); // Refresh the file list
 });
 
-uploadButton.addEventListener('click', () => {
-    const files = fileInput.files;
-    for (const element of files) {
-        const file = element;
-        const fileName = file.name;
-
-        minioClient.fPutObject(bucketName, fileName, file.path, (err, etag) => {
-            if (err) {
-                return console.log(err);
-            }
-            console.log(`Uploaded ${fileName} successfully.`);
-            displayMedia(fileName);
-        });
+// Function to open media in a modal
+const openMedia = (fileName) => {
+    const fileExtension = fileName.split('.').pop().toLowerCase();
+    if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
+        modalImage.src = `http://localhost:3000/download/${fileName}`; // Adjust the endpoint as needed
+        modalImage.style.display = 'block';
+        modalVideo.style.display = 'none';
+    } else if (['mp4', 'webm', 'ogg'].includes(fileExtension)) {
+        modalVideo.src = `http://localhost:3000/download/${fileName}`; // Adjust the endpoint as needed
+        modalVideo.style.display = 'block';
+        modalImage.style.display = 'none';
     }
-});
+    mediaModal.style.display = 'block';
+};
 
-function displayMedia(fileName) {
-    const mediaItem = document.createElement('div');
-    mediaItem.classList.add('media-item');
+// Close modal when the user clicks on <span> (x)
+closeModal.onclick = () => {
+    mediaModal.style.display = 'none';
+    modalImage.style.display = 'none';
+    modalVideo.style.display = 'none';
+};
 
-    const mediaUrl = `${minioEndpoint}/${bucketName}/${fileName}`;
-    if (fileName.endsWith('.mp4') || fileName.endsWith('.webm')) {
-        const video = document.createElement('video');
-        video.src = mediaUrl;
-        video.controls = true;
-        mediaItem.appendChild(video);
-    } else {
-        const img = document.createElement('img');
-        img.src = mediaUrl;
-        img.alt = fileName;
-        img.style.maxWidth = '100%';
-        mediaItem.appendChild(img);
-    }
-
-    mediaContainer.appendChild(mediaItem);
-}
+// Fetch the file list on page load
+fetchFileList();
