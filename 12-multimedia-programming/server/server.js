@@ -62,7 +62,7 @@ app.get("/download/:filename", (req, res) => {
     if (err) {
       return res.status(404).send(err);
     }
-    res.set("Content-Type", "image/jpeg"); // Set appropriate content type
+    res.set("Content-Type", "image/jpeg");
     stream.pipe(res);
   });
 });

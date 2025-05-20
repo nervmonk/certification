@@ -6,9 +6,9 @@ const modalImage = document.getElementById('modalImage');
 const modalVideo = document.getElementById('modalVideo');
 const closeModal = document.getElementById('closeModal');
 
-// Function to fetch the list of uploaded files
+// Fetching list
 const fetchFileList = async () => {
-    const response = await fetch('http://localhost:3000/files'); // Adjust the endpoint as needed
+    const response = await fetch('http://localhost:3000/files');
     const files = await response.json();
     fileList.innerHTML = '';
     files.forEach(file => {
@@ -19,7 +19,7 @@ const fetchFileList = async () => {
     });
 };
 
-// Function to handle file upload
+// Upload file
 uploadForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -32,19 +32,19 @@ uploadForm.addEventListener('submit', async (e) => {
         body: formData
     });
 
-    fileInput.value = ''; // Clear the file input
-    fetchFileList(); // Refresh the file list
+    fileInput.value = '';
+    fetchFileList();
 });
 
-// Function to open media in a modal
+// Open the media
 const openMedia = (fileName) => {
     const fileExtension = fileName.split('.').pop().toLowerCase();
     if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
-        modalImage.src = `http://localhost:3000/download/${fileName}`; // Adjust the endpoint as needed
+        modalImage.src = `http://localhost:3000/download/${fileName}`;
         modalImage.style.display = 'block';
         modalVideo.style.display = 'none';
     } else if (['mp4', 'webm', 'ogg'].includes(fileExtension)) {
-        modalVideo.src = `http://localhost:3000/download/${fileName}`; // Adjust the endpoint as needed
+        modalVideo.src = `http://localhost:3000/download/${fileName}`;
         modalVideo.style.display = 'block';
         modalImage.style.display = 'none';
     }
