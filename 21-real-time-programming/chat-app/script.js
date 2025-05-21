@@ -6,6 +6,8 @@ const sendButton = document.getElementById("send-button");
 
 socket.addEventListener("message", (event) => {
   if (event.data instanceof Blob) {
+    console.log("instance of Blob");
+    
     const reader = new FileReader();
     reader.onload = () => {
       const message = reader.result;
@@ -16,6 +18,7 @@ socket.addEventListener("message", (event) => {
     };
     reader.readAsText(event.data);
   } else {
+    console.log("else block");
     const messageElement = document.createElement("div");
     messageElement.textContent = event.data;
     messagesContainer.appendChild(messageElement);
