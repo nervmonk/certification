@@ -17,8 +17,8 @@ services:
     environment:
       - GF_SMTP_ENABLED=true
       - GF_SMTP_HOST=smtp.gmail.com:465
-      - GF_SMTP_USER=
-      - GF_SMTP_PASSWORD=
+      - GF_SMTP_USER=devdwikyryan@gmail.com
+      - GF_SMTP_PASSWORD=mtoy thqb yuip bjpc
       - GF_SMTP_FROM_ADDRESS=admin@grafana.localhost
       - GF_SMTP_FROM_NAME=Grafana
     networks:

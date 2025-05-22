@@ -3,7 +3,7 @@ App Security
 - Gunakan https untuk enkripsi data in transit
 - Enkripsi data sensitive dengan menggunakan algoritma kuat (RS256)
 - Implementasikan Authentication dan Authorization
-- Amankan aplikasi dari SQL dan XSS Injection
+- Amankan aplikasi dari SQL dan XSS Injection (DOMPurify client-side OWASP, Java HTML Sanitizer server-side)
 - Gunakan library dan framework yang memiliki proteksi terhadap common vulnerability
 - Untuk developer, ikuti secure coding guidelines dan best practices (contoh: OWASP Top Ten)
 - Implementasi secure session dan timeout (JWT token)

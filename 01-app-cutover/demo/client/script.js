@@ -9,10 +9,10 @@ function fetchApiData() {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      return response.text(); // Assuming the API returns a plain text response
+      return response.text();
     })
     .then((data) => {
-      resultDiv.textContent = data + " " + counter++; // Display the returned string
+      resultDiv.textContent = data + " " + counter++;
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
