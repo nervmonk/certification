@@ -1,3 +1,6 @@
-- Melihat requirement projects (enterprise-grade app, internal tool, public facing product?)
-- Melihat functionality (Real time features? API integrations? Heavy UI? Static content?)
-- Preferensi tim dan skillset terhadap tech stack (for FE, React, Angular, Vue, Svelte, vice versa for BE, Node JS, Spring Boot)
+- Cek reputasi dan popularitas library di platform-platform seperti github, npm, atau maven repository
+- Cek keaktifan maintenance library
+- Cek dokumentasi penggunaan library
+- Cek jika library tersebut pernah melakukan security audit
+- Cek lisensi library
+- Cek kompatibilitas dengan aplikasi yang akan diintegrasikan
