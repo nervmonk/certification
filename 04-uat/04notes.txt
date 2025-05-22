@@ -14,16 +14,6 @@
 14. Setelah proses testing selesai, dapatkan persetujuan formal dari client/stakeholder
 15. Dokumentasikan hasil UAT dan apa yang menjadi lesson learned dalam proses UAT kali ini
 
-Final Approval:
-Once testing is complete and all critical issues are resolved, obtain formal approval from stakeholders to proceed with deployment.
-Document the UAT results and any lessons learned for future projects.
-Deployment:
-After receiving approval, the software is deployed to the production environment.
-Monitor the system post-deployment to address any issues that may arise.
-Goals of UAT
-Validation of Requirements: Ensure that the software meets the business requirements and user needs as defined in the project scope.
-User Satisfaction: Confirm that the end users are satisfied with the functionality and usability of the software.
-Risk Mitigation: Identify and resolve issues before the software goes live, reducing the risk of failures in the production environment.
-Quality Assurance: Enhance the overall quality of the software by involving real users in the testing process.
-Change Management: Facilitate user acceptance of the new system by involving them in the testing process and addressing their concerns.
-UAT is essential for delivering a product that aligns with user expectations and business goals, ultimately leading to a successful software implementation.
+
+
+https://docs.google.com/spreadsheets/d/1uxQAzQXAuS2Mcjjek3J_eLk5lFLRi762f_vlI_zojao/edit?gid=0#gid=0
