@@ -1,28 +1,8 @@
-function appendToDisplay(value) {
-    const display = document.getElementById('display');
-    const currentValue = display.value;
+document.getElementById('calculate').addEventListener('click', () => {
+    const num1 = document.getElementById('number1').value;
+    const num2 = document.getElementById('number2').value;
 
-    if (['+', '-', '*', '/'].includes(value)) {
-        if (currentValue && ['+', '-', '*', '/'].includes(currentValue.slice(-1))) {
-            display.value = currentValue.slice(0, -1) + value;
-        } else {
-            display.value += value;
-        }
-    } else {
-        display.value += value;
-    }
-}
+    const result = num1 + num2;
 
-function clearDisplay() {
-    document.getElementById('display').value = '';
-}
-
-function calculateResult() {
-    const display = document.getElementById('display');
-    try {
-        display.value = eval(display.value);
-    } catch (error) {
-        console.log(error);
-        display.value = 'Error';
-    }
-}
+    document.getElementById('result').innerText = 'Result: ' + result;
+});
